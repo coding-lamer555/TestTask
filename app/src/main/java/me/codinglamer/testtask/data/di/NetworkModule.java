@@ -1,9 +1,7 @@
 package me.codinglamer.testtask.data.di;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -31,12 +29,11 @@ public class NetworkModule {
     @Singleton
     @Provides
     public Gson provideGson() {
-        return new GsonBuilder()
-                .create();
+        return new Gson();
     }
 
     @Provides
-//    @Named("main_retrofit")
+//    @Named("main")
     public Retrofit provideRetrofit(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .baseUrl(ApiConfig.BASE_URL)

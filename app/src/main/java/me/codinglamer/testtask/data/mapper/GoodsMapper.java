@@ -9,11 +9,16 @@ import me.codinglamer.testtask.data.datasource.api.model.GoodsApiModel;
 import me.codinglamer.testtask.data.datasource.local.model.GoodsLocalModel;
 import me.codinglamer.testtask.domain.model.GoodsPreviewEntity;
 
-public class GoodsPreviewMapper implements BaseMapper<GoodsApiModel, GoodsPreviewEntity, GoodsLocalModel> {
+public class GoodsMapper implements BaseMapper<GoodsApiModel, GoodsPreviewEntity, GoodsLocalModel> {
 
     @Inject
-    public GoodsPreviewMapper() {
+    public GoodsMapper() {
 
+    }
+
+    @Override
+    public GoodsPreviewEntity mapApiToEntity(GoodsApiModel goodsApiModel) {
+        return null;
     }
 
     @Override
@@ -37,7 +42,7 @@ public class GoodsPreviewMapper implements BaseMapper<GoodsApiModel, GoodsPrevie
                 .id(goodsLocalModel.id)
                 .preview(goodsLocalModel.preview)
                 .price(String.format(Locale.US, "$ %f", goodsLocalModel.price))
-                .rating(String.format(Locale.US, "$ %f", goodsLocalModel.rating))
+                .rating(String.format(Locale.US, "%f", goodsLocalModel.rating))
                 .name(goodsLocalModel.name)
                 .countInCart(goodsLocalModel.countInCart)
                 .build();

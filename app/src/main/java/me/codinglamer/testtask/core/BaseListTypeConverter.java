@@ -9,19 +9,12 @@ import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
-
 public class BaseListTypeConverter<T> {
 
-    private Gson gson;
+    private final Gson gson = new Gson();
 
     public BaseListTypeConverter() {
 
-    }
-
-    @Inject
-    public BaseListTypeConverter(Gson gson) {
-        this.gson = gson;
     }
 
     @TypeConverter

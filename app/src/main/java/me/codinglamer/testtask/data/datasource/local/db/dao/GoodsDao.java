@@ -9,7 +9,6 @@ import androidx.room.Query;
 import java.util.List;
 
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Single;
 import me.codinglamer.testtask.data.datasource.local.model.GoodsLocalModel;
 
 @Dao
